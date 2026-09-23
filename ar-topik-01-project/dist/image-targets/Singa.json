@@ -1,0 +1,23 @@
+{
+  "type": "PLANAR",
+  "properties": {
+    "top": 55,
+    "left": 0,
+    "width": 1240,
+    "height": 1653,
+    "isRotated": false,
+    "originalWidth": 1240,
+    "originalHeight": 1748
+  },
+  "imagePath": "image-targets/Singa_luminance.png",
+  "metadata": null,
+  "name": "Singa",
+  "resources": {
+    "originalImage": "Singa_original.png",
+    "croppedImage": "Singa_cropped.png",
+    "thumbnailImage": "Singa_thumbnail.png",
+    "luminanceImage": "Singa_luminance.png"
+  },
+  "created": 1789699793392,
+  "updated": 1789702718071
+}
