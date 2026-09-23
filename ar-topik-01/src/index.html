@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>AR Paud Project</title>
+
+  <!-- SCRIPT INTI 8TH WALL (WAJIB ADA) -->
+  <script crossorigin="anonymous" src="./external/runtime/runtime.js"></script>
+  <script crossorigin="anonymous" src="./external/xr/xr.js" async="true" data-preload-chunks="face, slam"></script>
+
+  <!-- STYLE UNTUK UI AR KITA -->
+<style>
+  body, html {
+    margin: 0; padding: 0; width: 100%; height: 100%; pointer-events: none;
+  }
+
+  /* KITA PINDAH KE KIRI DAN PUTAR MIRING (MENGHADAP KIRI / LANDSCAPE) */
+  #ui-container {
+    position: absolute; 
+    left: 30px;       /* Nempel di pinggir kiri layar */
+    top: 50%;         /* Pas di tengah-tengah layar secara vertikal */
+    
+    /* Ini kuncinya: Geser ke tengah, lalu putar miring 90 derajat */
+    /* Catatan: Kalau posisi hadap-hadapannya terbalik menurut Anda, tinggal ganti 90deg jadi -90deg */
+    transform: translateX(-35%) translateY(-50%) rotate(90deg); 
+    
+    display: none; 
+    flex-direction: row; 
+    gap: 150px; 
+    z-index: 10;
+  }
+
+  .tombol-ganti {
+    pointer-events: auto; width: 110px; height: 50px; cursor: pointer;
+    transition: transform 0.1s;
+  }
+
+  .tombol-ganti:active {
+    transform: scale(0.9);
+  }
+</style>
+</head>
+
+<body>
+  
+  <!-- WADAH TOMBOL UI -->
+  <div id="ui-container">
+    <!-- Nanti ganti src="..." dengan nama file gambar PNG tombol Anda -->
+    <img class="tombol-ganti" id="btn-suara" src="assets/Geometri_42_1_1.png" alt="Suara Hewan">
+    <img class="tombol-ganti" id="btn-penjelasan" src="assets/Frame_9.png" alt="Penjelasan">
+  </div>
+
+  <!-- WADAH AUDIO -->
+  <!-- Nanti ganti src="..." dengan nama file MP3 Anda -->
+  <audio id="audio-suara" src="assets/lion.mp3"></audio>
+  <audio id="audio-penjelasan" src="assets/Singa.mp3"></audio>
+
+  <!-- SCRIPT RENDERER 3D (WAJIB ADA) -->
+  <script src="bundle.js"></script>
+
+</body>
+</html>
